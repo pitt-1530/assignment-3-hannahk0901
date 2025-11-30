@@ -6,7 +6,20 @@ import static org.junit.jupiter.api.Assertions.*;
 public class PlaylistRecommenderTest {
 
     @Test
-    public void placeholder() {
-        assertTrue(true);
+    void testClassifyEnergy() {
+        PlaylistRecommender p = new PlaylistRecommender();
+        assertEquals("HIGH", p.classifyEnergy(Arrays.asList(150, 140)));
+    }
+
+    @Test
+    void testIsValidTrackTitle() {
+        PlaylistRecommender p = new PlaylistRecommender();
+        assertTrue(p.isValidTrackTitle("Hello World"));
+    }
+
+    @Test
+    void testNormalizeVolume() {
+        PlaylistRecommender p = new PlaylistRecommender();
+        assertEquals(100, p.normalizeVolume(200));
     }
 }
